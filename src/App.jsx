@@ -1,12 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import CadastroForm from "./components/CadastroForm";
+import Login from "./components/Login";
 
 function App() {
   const [cadastro, setCadastro] = useState([]);
 
   const cadastrar = async (nome, sobrenome, email, celular, cpf, logradouro, cidade_nome, senha, genero) => {
-    // Monta o objeto no formato correto
     const novoCliente = {
       nome,
       sobrenome,
@@ -35,10 +36,8 @@ function App() {
       if (response.ok) {
         const data = await response.json();
         window.alert("Cliente cadastrado com sucesso:");
-        // Atualiza o estado com o novo cliente
         setCadastro((prevCadastro) => [...prevCadastro, data]);
       } else {
-        // Log de erro com detalhes
         const errorData = await response.text();
         window.alert("Erro ao cadastrar cliente:", response.status, response.statusText, errorData);
       }
@@ -48,9 +47,18 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <CadastroForm cadastrar={cadastrar} />
-    </div>
+    <Router>
+      <div className="app">
+        <nav>
+          <Link to="/">Cadastro</Link>
+          <Link to="/login">Login</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<CadastroForm cadastrar={cadastrar} />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
