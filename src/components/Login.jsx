@@ -21,7 +21,7 @@ const Login = () => {
         const data = await response.json();
         // Armazenar o token em localStorage ou sessionStorage
         localStorage.setItem("token", data.token);
-        window.alert(`Bem-vindo(a), ${data.nome}!`);
+        window.alert(`Bem-vindo(a)!`);
         // Redirecionar para a página principal ou dashboard após login bem-sucedido
         navigate("/dashboard"); // Exemplo de redirecionamento, ajuste conforme necessário
       } else {
