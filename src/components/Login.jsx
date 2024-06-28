@@ -70,7 +70,7 @@ const Login = () => {
           <div>
             <p>
               Não tem um cadastro conosco ainda?! Não se preocupe!{" "}
-              <Link to="/">Cadastre-se</Link> agora! 😍
+              <Link to="/cadastrar">Cadastre-se</Link> agora! 😍
             </p>
           </div>
         </div>

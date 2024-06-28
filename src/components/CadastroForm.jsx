@@ -59,9 +59,7 @@ const CadastroForm = ({ cadastrar }) => {
 
   return (
     <div className="container">
-      <div className="login-button">
-        <button onClick={handleLoginClick}>Entrar</button>
-      </div>
+
       <div className="form-image">
         <img src={foto_robo} alt="Foto robo digitando em um computador" />
       </div>
@@ -71,6 +69,9 @@ const CadastroForm = ({ cadastrar }) => {
           <div className="form-header">
             <div className="title">
               <h1>Cadastre-se</h1>
+            </div>
+            <div className="login-button">
+              <button onClick={handleLoginClick}>Entrar</button>
             </div>
           </div>
 
