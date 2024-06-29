@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../css/Login.css";
 import { Link, useNavigate } from "react-router-dom"; // Importar Link e useNavigate do React Router
 import connected_world_animate from "../assets/connected-world-animate.svg";
 
@@ -23,7 +24,7 @@ const Login = () => {
         localStorage.setItem("token", data.token);
         window.alert(`Bem-vindo(a)!`);
         // Redirecionar para a página principal ou dashboard após login bem-sucedido
-        navigate("/dashboard"); // Exemplo de redirecionamento, ajuste conforme necessário
+        navigate("/chatbot"); // Exemplo de redirecionamento, ajuste conforme necessário
       } else {
         window.alert("Erro ao fazer login. Verifique suas credenciais.");
       }
@@ -70,7 +71,7 @@ const Login = () => {
           <div>
             <p>
               Não tem um cadastro conosco ainda?! Não se preocupe!{" "}
-              <Link to="/cadastrar">Cadastre-se</Link> agora! 😍
+              <Link to="/cadastro">Cadastre-se</Link> agora! 😍
             </p>
           </div>
         </div>

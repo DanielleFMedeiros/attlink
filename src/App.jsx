@@ -4,6 +4,8 @@ import "./App.css";
 import CadastroForm from "./components/CadastroForm";
 import Login from "./components/Login";
 import HomePage from "./components/HomePage";
+import Chat from "./components/Chat";
+
 
 function App() {
   const [cadastro, setCadastro] = useState([]);
@@ -50,19 +52,12 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <nav>
-          <Link to="/">HomePage</Link>
-          <Link to="/cadastrar">Cadastro</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/chatbot">Chatbot</Link>
 
-        
-        </nav>
         <Routes>
           <Route path="/" element={<HomePage/>} />
-          <Route path="/cadastrar" element={<CadastroForm cadastrar={cadastrar} />} />
+          <Route path="/cadastro" element={<CadastroForm cadastrar={cadastrar} />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/chatbot" element={<Chatbot />} />
+          <Route path="/chatbot" element={<Chat/>} />
         </Routes>
       </div>
     </Router>
