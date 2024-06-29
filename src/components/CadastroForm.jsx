@@ -20,12 +20,12 @@ const CadastroForm = ({ cadastrar }) => {
     e.preventDefault();
 
     if (senha !== confirmSenha) {
-      console.error("As senhas não coincidem");
+      window.alert("As senhas não coincidem");
       return;
     }
 
     if (!genero) {
-      console.error("Gênero não selecionado");
+      window.alert("Gênero não selecionado");
       return;
     }
 
